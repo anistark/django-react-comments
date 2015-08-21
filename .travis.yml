@@ -2,12 +2,9 @@ language: python
 sudo: false
 python:
 - '2.7'
-# addons:
-#   postgresql: "9.3"
 
-# cache:
-#   directories:
-#   - $HOME/.pip-cache/
+script:
+- flake8 django_react_comments/
 
 install:
   - pip install -r requirements.txt
