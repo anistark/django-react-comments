@@ -1,0 +1,10 @@
+language: python
+sudo: false
+python:
+- '2.7'
+
+script:
+- flake8 django_react_comments/
+
+install:
+  - pip install -r requirements.txt
