@@ -1,4 +1,6 @@
-<link rel="stylesheet" type="text/css" href="style.css">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
 <div id="content"></div>
 <script type="text/jsx">
 	/** @jsx React.DOM */
@@ -80,9 +82,10 @@
 		render: function() {
 			return (
 				<form className="commentForm" onSubmit={this.handleSubmit}>
-					<input type="text" id="textName" placeholder="Your name" ref="author" />
-					<input type="text" placeholder="Say something..." ref="text" />
-					<input type="submit" value="Post" />
+					<input type="text" placeholder="Your name" ref="author" />
+					<br />
+					<input type="text" id="textName" placeholder="Say something..." ref="text" />
+					<input type="submit" id="submitButton" value="Post" />
 				</form>
 			);
 		}
