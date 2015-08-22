@@ -10,6 +10,17 @@
 	<p>Proin in erat finibus, eleifend tellus sed, aliquet urna. Nulla in lorem varius, gravida turpis sed, mollis nisi. Sed suscipit, tellus a mollis luctus, libero ante varius mauris, vel hendrerit erat ante eget velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed luctus sapien id consectetur auctor. Praesent eget nibh id magna molestie accumsan. Ut gravida risus ut mi rhoncus facilisis. Vestibulum ornare nulla sit amet lorem dapibus, non lobortis massa accumsan. Donec blandit eros ut urna facilisis, pulvinar bibendum nisi aliquet. Aenean ullamcorper ligula sed odio ornare posuere ut eu arcu. Vestibulum pulvinar, diam vel finibus sagittis, ante turpis mollis orci, non rutrum lacus tellus at justo. Duis sed arcu nulla. Suspendisse ut ante nec nunc molestie maximus.</p>
 
 	<p>Ut quis nisi eget augue porta dignissim nec a velit. Pellentesque vel pulvinar magna. Maecenas quis tristique diam. Nam suscipit erat in ipsum consequat mollis. Fusce tempus eros at commodo lobortis. Aenean tempor porttitor placerat. Donec dapibus augue sed malesuada tincidunt. Donec dui augue, aliquam id ultrices sed, pellentesque vitae quam.</p>
-	{% load comments %}
+	{% get_comment_form as form %}
+	<table>
+		<form action="#" method="post">
+			{{ form }}
+			<tr>
+				<td>
+					<input type="submit" name="submit" value="Post">
+					<input type="submit" name="preview" value="Preview">
+				</td>
+			</tr>
+		</form>
+	</table>
 </body>
 </html>
