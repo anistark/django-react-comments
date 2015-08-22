@@ -25,7 +25,7 @@ SECRET_KEY = '&e1pwnrffy=z3k^(3rqubtjhq9=&o)b)=_6wqjxxtlu#acw(oi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'comments_demo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/puja/Documents/reactJS/comments_demo/comments_demo/templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
