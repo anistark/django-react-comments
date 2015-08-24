@@ -1,12 +1,12 @@
-# Django Comments Package made in React
+# Django Comments Module
 
-[![Build Status](https://travis-ci.org/anistark/django-react-comments.svg?branch=master)](https://travis-ci.org/anistark/django-react-comments)
+To run:
 
+```
+virtualenv env
+pip install -r requirements.txt
+./manage.py syncdb
+./manage.py runserver
+```
 
-Under developement
-
-
-
-## License
-
-[LICENSE](https://github.com/anistark/django-react-comments/blob/master/LICENSE) (MIT).
+Pypi file available at : [django-react-comments](https://pypi.python.org/pypi?%3Aaction=display&name=django-react-comments&version=0.0.2)

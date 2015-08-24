@@ -1,11 +1,24 @@
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
 <div id="content"></div>
+<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 <script type="text/jsx">
 	/** @jsx React.DOM */
 	var CommentBox = React.createClass({
 		getInitialState: function() {
+			// $.ajax({
+			// 	url : "getcomments/",
+			// 	type : "POST",
+			// 	success : function(data) {
+			// 		console.log('success - '+ JSON.stringify(data));
+			// 		return data;
+			// 	},
+			// 	error : function(xhr,errmsg,err) {
+			// 		console.log('err');
+			// 		console.log(xhr.status + ": " + xhr.responseText);
+			// 		return {data: []};
+			// 	}
+			// });
 			return {data: []};
 		},
 		loadCommentsFromServer: function() {
@@ -13,10 +26,12 @@
 				url : this.props.url,
 				dataType : 'json',
 				success : function(data) {
+					console.log('in - '+ data);
 					this.setState({data: data});
 				}.bind(this),
 				error : function(xhr, status, err) {
-					console.error(this.props.url, status, err.toString());
+					console.log('out');
+					console.error(this.props.url, status, err);
 				}.bind(this)
 			});
 		},
@@ -25,9 +40,9 @@
 			var newComments = comments.concat([comment]);
 			this.setState({data: newComments});
 			$.ajax({
-				url: ' ',
-				dataType: 'json',
 				type: 'POST',
+				url: '/',
+				dataType: 'json',
 				data: comment,
 				success: function(data) {
 					this.setState({data: data});
@@ -35,7 +50,7 @@
 				error: function(xhr, status, err) {
 					console.error(' ', status, err );
 				}.bind(this)
-		   });
+			});
 		},
 		componentDidMount: function() {
 			this.loadCommentsFromServer();
@@ -82,7 +97,7 @@
 		render: function() {
 			return (
 				<form className="commentForm" onSubmit={this.handleSubmit}>
-					<input type="text" placeholder="Your name" ref="author" />
+					<input hidden type="text" placeholder="Your name" ref="author" value="Author" />
 					<br />
 					<input type="text" id="textName" placeholder="Say something..." ref="text" />
 					<input type="submit" id="submitButton" value="Post" />
@@ -95,20 +110,21 @@
 		render: function() {
 			return (
 				<div className="comment">
-					<h2 className="commentAuthor">
-						{this.props.author}
-					</h2>
-					<div>{this.props.children}</div>
+					<div className="row">
+						<div className="commentAuthor col s2">
+								{this.props.author}
+						</div>
+						<div className="commentText col s10">{this.props.children}</div>
+					</div>
 				</div>
 			);
 		}
 	});
 	React.renderComponent(
-		<CommentBox url=" " pollInterval={2000} />,
+		<CommentBox url="getcomments/" pollInterval={2000} />,
 		document.getElementById('content')
 	);
 </script>
 <script src="http://fb.me/react-0.11.1.js"></script>
 <script src="http://fb.me/JSXTransformer-0.11.1.js"></script>
-<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
