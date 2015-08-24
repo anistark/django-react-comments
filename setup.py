@@ -19,8 +19,8 @@ setup(
 
     url='https://github.com/anistark/django-react-comments',
 
-    authors='Kumar Anirudha',
-    author_email='anirudhastark@yahoo.com',
+    authors='Kumar Anirudha, Puja Singh',
+    author_email='anirudhastark@yahoo.com, singhpuja0708@gmail.com',
 
     license='MIT',
 
