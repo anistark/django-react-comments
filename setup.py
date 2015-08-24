@@ -12,15 +12,15 @@ here = path.abspath(path.dirname(__file__))
 setup(
     name='django-react-comments',
 
-    version='0.0.3',
+    version='0.0.4',
 
     description='Django comment module using in reactJS',
     long_description='Django comment module using in reactJS. Currently only stores to db and uses a dummy user and post.',
 
-    url='https://github.com/djangothon/django-react-comments',
+    url='https://github.com/anistark/django-react-comments',
 
-    authors='Kumar Anirudha','Puja Singh',
-    author_email='anirudhastark@yahoo.com','singhpuja0708@gmail.com',
+    authors='Kumar Anirudha',
+    author_email='anirudhastark@yahoo.com',
 
     license='MIT',
 
@@ -34,7 +34,7 @@ setup(
         'Programming Language :: Python :: 2.7',
     ],
 
-    keywords='django,comment,module,djangothon,anistark,puja0708,reactJS',
+    keywords='django,comment,module,djangothon,anistark,puja0708,reactJS, Kumar Anirudha, Anirudha',
 
     
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
