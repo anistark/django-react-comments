@@ -1,6 +1,6 @@
 """
 See:
-https://github.com/djangothon/django-react-comments
+https://github.com/anistark/django-react-comments
 """
 
 from setuptools import setup, find_packages
