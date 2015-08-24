@@ -19,7 +19,7 @@ setup(
 
     url='https://github.com/anistark/django-react-comments',
 
-    author='Kumar Anirudha, Puja Singh',
+    author='Kumar Anirudha<anirudhastark@yahoo.com>, Puja Singh<singhpuja0708@gmail.com>',
     author_email='anirudhastark@yahoo.com, singhpuja0708@gmail.com',
 
     license='MIT',
@@ -34,7 +34,7 @@ setup(
         'Programming Language :: Python :: 2.7',
     ],
 
-    keywords='django,comment,module,djangothon,anistark,puja0708,reactJS, Kumar Anirudha, Anirudha',
+    keywords='django,comment,module,djangothon,anistark,puja0708,reactJS',
 
     
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
