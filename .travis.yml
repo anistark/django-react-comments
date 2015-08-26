@@ -4,7 +4,7 @@ python:
 - '2.7'
 
 script:
-- flake8 django_react_comments/
+- flake8 django_comments/
 
 install:
   - pip install -r requirements.txt
