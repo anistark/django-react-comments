@@ -38,13 +38,13 @@ setup(
 
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
 
-    install_requires= [],
+    install_requires=[],
 
-    extras_require= {},
+    extras_require={},
 
-    package_data= {},
+    package_data={},
 
-    data_files= [],
+    data_files=[],
 
-    entry_points= {},
+    entry_points={},
 )

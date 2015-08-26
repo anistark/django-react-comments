@@ -13,7 +13,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Comments',
             fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('id', models.AutoField(
+                    verbose_name='ID',
+                    serialize=False,
+                    auto_created=True,
+                    primary_key=True)),
                 ('user_id', models.CharField(max_length=250)),
                 ('post_id', models.CharField(max_length=250)),
                 ('comment', models.CharField(max_length=500)),
