@@ -4,7 +4,7 @@ https://github.com/anistark/django-react-comments
 """
 
 from setuptools import setup, find_packages
-from codecs import open
+# from codecs import open
 from os import path
 
 here = path.abspath(path.dirname(__file__))
@@ -36,27 +36,15 @@ setup(
 
     keywords='django,comment,module,djangothon,anistark,puja0708,reactJS',
 
-    
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
 
-    
-    install_requires=[ ],
+    install_requires= [],
 
-    
-    extras_require={
-        
-    },
+    extras_require= {},
 
-    
-    package_data={
-        
-    },
+    package_data= {},
 
-    
-    data_files=[ ],
+    data_files= [],
 
-    
-    entry_points={
-        
-    },
+    entry_points= {},
 )
