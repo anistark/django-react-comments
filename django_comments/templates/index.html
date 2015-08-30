@@ -6,19 +6,6 @@
 	/** @jsx React.DOM */
 	var CommentBox = React.createClass({
 		getInitialState: function() {
-			// $.ajax({
-			// 	url : "getcomments/",
-			// 	type : "POST",
-			// 	success : function(data) {
-			// 		console.log('success - '+ JSON.stringify(data));
-			// 		return data;
-			// 	},
-			// 	error : function(xhr,errmsg,err) {
-			// 		console.log('err');
-			// 		console.log(xhr.status + ": " + xhr.responseText);
-			// 		return {data: []};
-			// 	}
-			// });
 			return {data: []};
 		},
 		loadCommentsFromServer: function() {
