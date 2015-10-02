@@ -5,6 +5,7 @@ from comment_react.models import Comments
 from django.http import HttpResponse
 import json
 import urllib2
+from django.http import QueryDict
 
 
 @csrf_exempt
@@ -13,9 +14,11 @@ def home(request):
     if request.method == 'GET':
         return render_to_response('index.html')
     elif request.method == 'POST':
-        data = request.POST.urlencode()
-        comment = data.split('&')[0].split('=')[1]
-        author = data.split('&')[1].split('=')[1]
+        queryDict = QueryDict()
+        queryDict = request.POST
+        a = dict(queryDict.lists())
+        comment = str(a.get('text')).split("'")[1].decode('utf-8')
+        author = str(a.get('author')).split("'")[1].decode('utf-8')
         print 'comment - ' + comment
         print 'author - ' + author
         p1 = Comments(user_id=author,
