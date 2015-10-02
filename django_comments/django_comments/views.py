@@ -5,6 +5,8 @@ from comment_react.models import Comments
 from django.http import HttpResponse
 import json
 import urllib2
+
+
 @csrf_exempt
 def home(request):
     # context_instance = RequestContext(request)
