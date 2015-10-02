@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ```
 
 
-Pypi file available at : [django-react-comments](https://pypi.python.org/pypi?%3Aaction=display&name=django-react-comments&version=0.0.2)
+Pypi file available at : [django-react-comments](https://pypi.python.org/pypi/drc)
 
 Pypi package instal:
 
