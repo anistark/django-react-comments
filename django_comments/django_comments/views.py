@@ -4,8 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from comment_react.models import Comments
 from django.http import HttpResponse
 import json
-
-
+import urllib2
 @csrf_exempt
 def home(request):
     # context_instance = RequestContext(request)
@@ -31,7 +30,7 @@ def getComments(request):
     for obj in data:
         commentCurr = {
             "author": obj.user_id,
-            "text": obj.comment.replace('+', ' '),
+            "text": urllib2.unquote(obj.comment.replace('+', ' ')),
             "post_id": obj.post_id,
         }
         comments.append(commentCurr)
