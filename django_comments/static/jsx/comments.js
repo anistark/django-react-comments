@@ -114,7 +114,7 @@ var CommentBox = React.createClass({
 			);
 		}
 	});
-	React.renderComponent(
+	React.render(
 		<CommentBox url="getcomments/" pollInterval={2000} />,
 		document.getElementById('content')
 	);
