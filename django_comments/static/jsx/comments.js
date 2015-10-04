@@ -1,33 +1,15 @@
 var CommentBox = React.createClass({
 		getInitialState: function() {
-			// $.ajax({
-			// 	url : "getcomments/",
-			// 	type : "POST",
-			// 	success : function(data) {
-			// 		console.log('success - '+ JSON.stringify(data));
-			// 		return data;
-			// 	},
-			// 	error : function(xhr,errmsg,err) {
-			// 		console.log('err');
-			// 		console.log(xhr.status + ": " + xhr.responseText);
-			// 		return {data: []};
-			// 	}
-			// });
 			return {data: []};
 		},
 		loadCommentsFromServer: function() {
-			$.ajax({
-				url : this.props.url,
-				dataType : 'json',
-				success : function(data) {
-					console.log('in - '+ data);
-					this.setState({data: data});
-				}.bind(this),
-				error : function(xhr, status, err) {
-					console.log('out');
-					console.error(this.props.url, status, err);
-				}.bind(this)
-			});
+			$.get(this.props.url, function(result) {
+      if (this.isMounted()) {
+        this.setState({
+          data: result
+        });
+      }
+    }.bind(this));
 		},
 		handleCommentSubmit: function(comment) {
 			var comments = this.state.data;
